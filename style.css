@@ -1,18 +1,20 @@
 @import url(https://fonts.googleapis.com/css?family=Covered+By+Your+Grace);
 
+
 #time {
     text-align: center;
     font-family: 'Covered By Your Grace', cursive;
     margin: auto;
-    
-    
+    background-color: rgb(235, 200, 104);
 }
+
 #heure {
+
 color:cornflowerblue
 }
 
 #minutes {
-color:aquamarine
+color:rgb(171, 247, 247)
 
 }
  #secondes{

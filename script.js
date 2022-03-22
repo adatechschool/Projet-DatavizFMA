@@ -9,9 +9,9 @@ function move() {
   if (minutes < 10) {
     minutes = "0" + minutes;
   }
-  if(minutes==03){document.getElementById("minutes").style.color="red";}
-  document.getElementById("heure").innerHTML = hours;
-  document.getElementById("minutes").innerHTML = minutes;
+ if (minutes==05){document.getElementById("minutes").style.color="pink";}
+  document.getElementById("heure").innerHTML = hours + " :";
+  document.getElementById("minutes").innerHTML = minutes + " :";
   document.getElementById("secondes").innerHTML = seconds;
 }
 setInterval(move, 1000);
