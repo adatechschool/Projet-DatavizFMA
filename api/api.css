@@ -1,0 +1,11 @@
+body{
+    background-color: black;
+    color:antiquewhite
+}
+#title{
+    font-size: 70px;
+}
+#image{
+    width: 400px;
+    height:auto;
+}
