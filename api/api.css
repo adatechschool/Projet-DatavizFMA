@@ -1,11 +1,31 @@
 body{
-    background-color: black;
-    color:antiquewhite
+    background: no-repeat url(image/chicartgo.png);
+    /*background-color: black;*/
+    color:antiquewhite;
+    background-size:cover;
 }
+
 #title{
-    font-size: 70px;
+    font-size: 20px;
 }
+
 #image{
-    width: 400px;
-    height:auto;
+    width: 80vh;
+    height: 80vh;
+    margin-left: 5%;
+    margin-top: 5%;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+
+.flexbox {
+    display: flex;
+    
+    /*
+    height: 100px;
+    align-items: center;
+    justify-content: center;
+    */
+    
 }

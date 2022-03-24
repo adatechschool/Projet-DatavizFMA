@@ -20,7 +20,7 @@ function inHTML(data){
     document.getElementById("dimensions").innerHTML=data.data[x].dimensions
     document.getElementById("medium_display").innerHTML=data.data[x].medium_display
     document.getElementById("department_title").innerHTML=data.data[x].department_title
-    document.getElementById("image").src="https://www.artic.edu/iiif/2/" + data.data[x].image_id + "/full/843,/0/default.jpg"
+    document.getElementById("image").style.backgroundImage=`url("https://www.artic.edu/iiif/2/${data.data[x].image_id}/full/843,/0/default.jpg")`
 }
 
 }
