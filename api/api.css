@@ -1,19 +1,26 @@
+@font-face {
+    font-family: BreadleySans;
+    src: url(fonts/BreadleySans-Regular.ttf);
+}
 body{
-    background: no-repeat url(image/chicartgo.png);
+    background: no-repeat url(image/backchicartgo.png);
     /*background-color: black;*/
     color:antiquewhite;
     background-size:cover;
 }
 
 #title{
-    font-size: 20px;
+    font-size: 80px;
+    font-family: BreadleySans;
+    text-decoration: underline;
+    margin-bottom: 0px;
 }
 
 #image{
-    width: 80vh;
+    width: 50%;
     height: 80vh;
-    margin-left: 5%;
-    margin-top: 5%;
+    margin-left: 11%;
+    margin-top: 7%;
     background-size: contain;
     background-repeat: no-repeat;
 }
@@ -21,11 +28,31 @@ body{
 
 .flexbox {
     display: flex;
-    
-    /*
-    height: 100px;
     align-items: center;
-    justify-content: center;
-    */
-    
+    gap: 30px;
 }
+
+#info{
+    margin-top: -25vh;
+    margin-right: 2%;
+    font-family: BreadleySans;
+    font-size: 20px;
+}
+
+#logo img{
+    position:fixed;
+    width: 150px;
+}
+
+#bouton{
+    background-color: black;
+    border:none;
+    background-repeat: no-repeat;
+    display:block;
+    margin:auto;
+}
+
+#bouton img{
+    width:20vh;
+}
+
