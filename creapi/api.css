@@ -1,0 +1,59 @@
+@font-face {
+    font-family: BreadleySans;
+    src: url(fonts/BreadleySans-Regular.ttf);
+}
+body{
+    background: no-repeat url(image/backchicartgo.png);
+    /*background-color: black;*/
+    color:antiquewhite;
+    background-size:cover;
+}
+
+#title{
+    font-size: 70px;
+    font-family: BreadleySans;
+    text-decoration: underline;
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+
+#image{
+    width: 50%;
+    height: 80vh;
+    margin-left: 11%;
+    margin-top: 7%;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+
+.flexbox {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+#info{
+    margin-top: -10vh;
+    margin-right: 2%;
+    font-family: BreadleySans;
+    font-size: 20px;
+}
+
+#logo img{
+    position:fixed;
+    width: 150px;
+}
+
+#bouton{
+    background-color: black;
+    border:none;
+    background-repeat: no-repeat;
+    display:block;
+    margin:auto;
+}
+
+#bouton img{
+    width:20vh;
+}
+
