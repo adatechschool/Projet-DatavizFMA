@@ -10,10 +10,11 @@ body{
 }
 
 #title{
-    font-size: 80px;
+    font-size: 70px;
     font-family: BreadleySans;
     text-decoration: underline;
     margin-bottom: 0px;
+    margin-top: 0px;
 }
 
 #image{
@@ -33,7 +34,7 @@ body{
 }
 
 #info{
-    margin-top: -25vh;
+    margin-top: -10vh;
     margin-right: 2%;
     font-family: BreadleySans;
     font-size: 20px;

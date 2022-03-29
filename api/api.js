@@ -20,6 +20,5 @@ function inHTML(data){
     document.getElementById("medium_display").innerHTML=data.data[x].medium_display
     document.getElementById("department_title").innerHTML=data.data[x].department_title
     document.getElementById("image").style.backgroundImage=`url("https://www.artic.edu/iiif/2/${data.data[x].image_id}/full/843,/0/default.jpg")`}
-
 }
 randomize()
