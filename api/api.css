@@ -2,10 +2,16 @@
     font-family: BreadleySans;
     src: url(fonts/BreadleySans-Regular.ttf);
 }
+
+@media(max-width: 800px){
+    .flexbox{
+        flex-direction:column;
+    }
+}
 body{
     background: no-repeat url(image/backchicartgo.png);
     /*background-color: black;*/
-    color:antiquewhite;
+    color:rgb(15, 15, 14);
     background-size:cover;
 }
 
@@ -34,6 +40,7 @@ body{
 }
 
 #info{
+    color:antiquewhite;
     margin-top: -10vh;
     margin-right: 2%;
     font-family: BreadleySans;
@@ -41,8 +48,8 @@ body{
 }
 
 #logo img{
-    position:fixed;
-    width: 150px;
+
+    width: 180px;
 }
 
 #bouton{
