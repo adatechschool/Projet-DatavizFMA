@@ -74,6 +74,7 @@ audio {
      top: 20px;
 	 z-index: 2;
 }
+
  #burger-menu span, #burger-menu span:before, #burger-menu span:after {
 	 background: #fff;
 	 display: block;
@@ -129,11 +130,12 @@ audio {
 	 text-align: center;
 	 padding-top: 20px;
 	 transition: all 0.3s ease-in-out;
+     overflow: scroll;
 }
  #menu.overlay {
 	 visibility: visible;
 	 opacity: 1;
-	 padding-top: 100px;
+	 padding-top: 70px;
 	 background: rgba(0, 0, 0, 0.5);
 }
  #menu ul {

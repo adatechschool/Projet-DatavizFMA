@@ -69,7 +69,7 @@ setTimeout(() => {
   fetch(url2)
   .then((response) => response.json())
   .then((dataDepartment) => inHTML(dataDepartment.data));
-}, 4000)
+}, 3000)
 
 }
 
