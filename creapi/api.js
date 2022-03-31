@@ -1,6 +1,24 @@
 
 let burgerMenu = document.getElementById("burger-menu");
 let overlay = document.getElementById("menu");
+let currentDepartement=""
+
+function clicked(department){
+  if (department=== "") { 
+    if (currentDepartement ===""){
+      randomize()
+    } else {
+      filterResults(currentDepartement)
+    }
+  } else {
+    currentDepartement = department
+      burgerMenu.classList.toggle("close")
+      overlay.classList.toggle("overlay")
+    filterResults(department)
+  }
+  
+
+}
 
 //Art Institute of Chicago API
 function randomize() {
@@ -40,9 +58,6 @@ randomize();
 
 async function filterResults(department) {
 
-  burgerMenu.classList.toggle("close")
-  overlay.classList.toggle("overlay")
-
   let array = [];
   for (let p = 1; p <= 10; p++) {
     let url = "https://api.artic.edu/api/v1/artworks?page=" + p;
@@ -77,7 +92,7 @@ async function filterResults(department) {
     fetch(url2)
       .then((response) => response.json())
       .then((dataDepartment) => inHTML(dataDepartment.data));
-  }, 3000)
+  },1000)
 
 }
 
