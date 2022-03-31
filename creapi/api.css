@@ -131,12 +131,13 @@ audio {
 	 padding-top: 20px;
 	 transition: all 0.3s ease-in-out;
      overflow: scroll;
+     font-family: BreadleySans;
 }
  #menu.overlay {
 	 visibility: visible;
 	 opacity: 1;
 	 padding-top: 70px;
-	 background: rgba(0, 0, 0, 0.5);
+	 background: rgba(0, 0, 0, 0.80);
 }
  #menu ul {
 	 padding: 0;

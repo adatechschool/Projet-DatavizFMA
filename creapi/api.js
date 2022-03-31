@@ -1,3 +1,7 @@
+
+let burgerMenu = document.getElementById("burger-menu");
+let overlay = document.getElementById("menu");
+
 //Art Institute of Chicago API
 function randomize() {
   let pages = Math.floor(Math.random() * 50);
@@ -9,7 +13,7 @@ function randomize() {
     .then((data) => inHTML(data.data[x]))
     .catch((error) => alert("Erreur : " + error));
 
-    let x = Math.floor(Math.random() * 12);
+  let x = Math.floor(Math.random() * 12);
 }
 
 
@@ -32,9 +36,13 @@ function inHTML(data) {
   ).style.backgroundImage = `url("https://www.artic.edu/iiif/2/${data.image_id}/full/843,/0/default.jpg")`;
 }
 
-//randomize();
+randomize();
 
 async function filterResults(department) {
+
+  burgerMenu.classList.toggle("close")
+  overlay.classList.toggle("overlay")
+
   let array = [];
   for (let p = 1; p <= 10; p++) {
     let url = "https://api.artic.edu/api/v1/artworks?page=" + p;
@@ -46,7 +54,7 @@ async function filterResults(department) {
 
     function createArray(data) {
       //console.log(data)
-      let tmp = []; 
+      let tmp = [];
       for (let i = 0; i <= 11; i++) {
         //console.log(data[i])
         let dpt = data.data[i].department_title;
@@ -59,31 +67,31 @@ async function filterResults(department) {
     }
   }
 
-setTimeout(() => {
-  console.log("coucou")
-  let l = array.length;
-  let rst = Math.floor(Math.random() * l);
-  let url2 = "https://api.artic.edu/api/v1/artworks/" + array[rst];
-  console.log(url2);
+  setTimeout(() => {
+    console.log("coucou")
+    let l = array.length;
+    let rst = Math.floor(Math.random() * l);
+    let url2 = "https://api.artic.edu/api/v1/artworks/" + array[rst];
+    console.log(url2);
 
-  fetch(url2)
-  .then((response) => response.json())
-  .then((dataDepartment) => inHTML(dataDepartment.data));
-}, 3000)
+    fetch(url2)
+      .then((response) => response.json())
+      .then((dataDepartment) => inHTML(dataDepartment.data));
+  }, 3000)
 
 }
 
-filterResults("Textiles");
+//filterResults("Textiles");
 
 //MENU BURGER
-let burgerMenu = document.getElementById("burger-menu");
-let overlay = document.getElementById("menu");
 
-burgerMenu.addEventListener('click', function() {
+burgerMenu.addEventListener('click', function () {
   this.classList.toggle("close")
   overlay.classList.toggle("overlay")
+  //collapse.classList.toggle("close")
 });
 
-burgerMenu.addEventListener('click', function() {
+
+burgerMenu.addEventListener('click', function () {
 
 })
