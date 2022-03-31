@@ -76,10 +76,14 @@ setTimeout(() => {
 filterResults("Textiles");
 
 //MENU BURGER
-let burgermenu = document.getElementById("burger");
-let deroulant = document.getElementById("ouverture");
+let burgerMenu = document.getElementById("burger-menu");
+let overlay = document.getElementById("menu");
 
-burgermenu.addEventListener('click', function() {
-  this.classList.toggle("fermeture")
-  deroulant.classList.toggle("deroulant")
+burgerMenu.addEventListener('click', function() {
+  this.classList.toggle("close")
+  overlay.classList.toggle("overlay")
 });
+
+burgerMenu.addEventListener('click', function() {
+
+})
