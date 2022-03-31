@@ -6,30 +6,33 @@ function randomize() {
 
   fetch(url)
     .then((response) => response.json())
-    .then((data) => inHTML(data))
+    .then((data) => inHTML(data.data[x]))
     .catch((error) => alert("Erreur : " + error));
 
     let x = Math.floor(Math.random() * 12);
-
-  function inHTML(data) {
-    document.getElementById("title").innerHTML = data.data[x].title;
-    document.getElementById("artist_display").innerHTML =
-      data.data[x].artist_display;
-    document.getElementById("date_display").innerHTML =
-      data.data[x].date_display;
-    document.getElementById("provenance_text").innerHTML =
-      data.data[x].provenance_text;
-    document.getElementById("dimensions").innerHTML = data.data[x].dimensions;
-    document.getElementById("medium_display").innerHTML =
-      data.data[x].medium_display;
-    document.getElementById("department_title").innerHTML =
-      data.data[x].department_title;
-    document.getElementById(
-      "image"
-    ).style.backgroundImage = `url("https://www.artic.edu/iiif/2/${data.data[x].image_id}/full/843,/0/default.jpg")`;
-  }
 }
-randomize();
+
+
+
+function inHTML(data) {
+  document.getElementById("title").innerHTML = data.title;
+  document.getElementById("artist_display").innerHTML =
+    data.artist_display;
+  document.getElementById("date_display").innerHTML =
+    data.date_display;
+  document.getElementById("provenance_text").innerHTML =
+    data.provenance_text;
+  document.getElementById("dimensions").innerHTML = data.dimensions;
+  document.getElementById("medium_display").innerHTML =
+    data.medium_display;
+  document.getElementById("department_title").innerHTML =
+    data.department_title;
+  document.getElementById(
+    "image"
+  ).style.backgroundImage = `url("https://www.artic.edu/iiif/2/${data.image_id}/full/843,/0/default.jpg")`;
+}
+
+//randomize();
 
 async function filterResults(department) {
   let array = [];
@@ -38,29 +41,45 @@ async function filterResults(department) {
     console.log(p);
     await fetch(url)
       .then((response) => response.json())
-      .then((data) => createArray(data))
+      .then((data) => array = array.concat(createArray(data)))
       .catch((error) => alert("Erreur : " + error));
 
     function createArray(data) {
+      //console.log(data)
+      let tmp = []; 
       for (let i = 0; i <= 11; i++) {
         //console.log(data[i])
         let dpt = data.data[i].department_title;
         if (dpt == department) {
-          array.push(data.data[i].id);
+          console.log(data.data[i].id)
+          tmp.push(data.data[i].id);
         }
       }
+      return tmp;
     }
   }
 
+setTimeout(() => {
+  console.log("coucou")
   let l = array.length;
   let rst = Math.floor(Math.random() * l);
-  let url2 = "https://api.artic.edu/api/v1/artworks/" + array[rst] 
-  
+  let url2 = "https://api.artic.edu/api/v1/artworks/" + array[rst];
+  console.log(url2);
+
   fetch(url2)
   .then((response) => response.json())
-  .then ((data) => inHTML(data));
+  .then((dataDepartment) => inHTML(dataDepartment.data));
+}, 4000)
 
 }
+
 filterResults("Textiles");
 
-//Reprendre url id et afficher les infos
+//MENU BURGER
+let burgermenu = document.getElementById("burger");
+let deroulant = document.getElementById("ouverture");
+
+burgermenu.addEventListener('click', function() {
+  this.classList.toggle("fermeture")
+  deroulant.classList.toggle("deroulant")
+});
